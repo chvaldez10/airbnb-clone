@@ -3,6 +3,13 @@ from django.contrib.auth.models import AbstractUser
 from shortuuid.django_fields import ShortUUIDField
 from django.db.models.signals import post_save
 
+MALE = "M"
+FEMALE = "M"
+GENDER_CHOICES = [
+    (MALE, "Male"),
+    (FEMALE, "Female")
+]
+
 class User(AbstractUser):
     username = models.CharField(unique=True, max_length=100)
     email = models.EmailField(unique=True)
@@ -31,7 +38,7 @@ class Profile(models.Model):
     image = models.FileField(upload_to="image", default="default/default-user.jpg", null=True, blank=True)
     full_name = models.CharField(max_length=100, null=True, blank=True)
     about = models.TextField(null=True, blank=True)
-    gender = models.CharField(max_length=100, null=True, blank=True)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True, blank=True)
     country = models.CharField(max_length=100, null=True, blank=True)
     state = models.CharField(max_length=100, null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
