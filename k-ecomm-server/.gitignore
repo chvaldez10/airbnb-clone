@@ -127,7 +127,7 @@ cython_debug/
 .vscode/
 
 # Django migration files
-**/migrations/
+#**/migrations/
 
 # Local environment variables
 .env
