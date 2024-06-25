@@ -1,8 +1,15 @@
+asgiref
+attrs
 Django
 django-cors-headers
 django-jazzmin
 django-storages
 djangorestframework
 djangorestframework-simplejwt
-python-dateutil
+drf-yasg
+gunicorn
+mysql-connector-python
 python-dotenv
+redis
+requests
+sqlparse
